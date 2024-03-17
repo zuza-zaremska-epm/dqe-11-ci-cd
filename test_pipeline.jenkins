@@ -12,6 +12,7 @@ pipeline {
                 echo 'Establish virtual environment'
                 sh 'apt install -y python3-venv'
                 sh 'python3 -m venv env'
+                echo 'Activate virtual environment'
                 script {
                     sh '. env/bin/activate'
                 }
@@ -27,6 +28,7 @@ pipeline {
     }
     post {
         always {
+            echo 'Deactivate virtual environment'
             script {
                 sh 'deactivate'
         }
