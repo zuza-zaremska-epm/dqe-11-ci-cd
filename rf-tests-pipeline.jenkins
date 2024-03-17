@@ -11,7 +11,7 @@ pipeline {
       stage('List') {
         steps {
           echo "JENKINS HOME: ${JENKINS_HOME}"
-          bat("dir /B ${JENKINS_HOME}")
+
         }
       }
        stage('Test') {
