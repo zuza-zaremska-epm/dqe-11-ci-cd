@@ -1,21 +1,8 @@
 pipeline {
     agent any
-    environment {
-        PATH = "env/bin:$PATH"
-    }
     stages {
         stage('Setup') {
             steps {
-                echo 'Check Python and Pip versions:'
-                sh 'python3 --version'
-                sh 'pip --version'
-                echo 'Establish virtual environment'
-                sh 'apt install -y python3-venv'
-                sh 'python3 -m venv env'
-                echo 'Activate virtual environment'
-                script {
-                    sh '. env/bin/activate'
-                }
                 sh 'pip install -r requirements.txt'
             }
         }
