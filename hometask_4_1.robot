@@ -8,7 +8,7 @@ Suite Teardown    Disconnect From Database
 ${dbName}    AdventureWorks2012
 ${db_username}    TestLogin
 ${db_password}    pass123
-${db_host}    localhost
+${db_host}    127.0.0.1
 ${db_port}    1433
 
 *** Test Cases ***
