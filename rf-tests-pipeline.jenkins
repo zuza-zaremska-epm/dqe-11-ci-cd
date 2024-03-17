@@ -30,12 +30,4 @@ pipeline {
             }
         }
     }
-    post {
-        always {
-            echo 'Deactivate virtual environment'
-            script {
-                sh '. deactivate'
-            }
-        }
-    }
 }
