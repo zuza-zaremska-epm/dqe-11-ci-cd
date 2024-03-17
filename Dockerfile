@@ -6,5 +6,3 @@ RUN pwd
 RUN ls -la
 RUN apt-get update
 RUN apt-get install -y python3-pip
-RUN apt-get install -y python3-venv
-RUN apt-get install -y pipx
