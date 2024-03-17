@@ -1,30 +1,42 @@
 pipeline {
-   agent any
-
-   stages {
-      stage('Install requirements') {
-        steps {
-          sh 'virtualenv venv --distribute'
-          sh '. venv/bin/activate'
-          sh 'pip install -r requirements.txt'
-          echo 'Requirements installed.'
+    agent any
+    environment {
+        PATH = "env/bin:$PATH"
+    }
+    stages {
+        stage('Setup') {
+            steps {
+                echo 'Check Python and Pip versions:'
+                sh 'python3 --version'
+                sh 'pip --version'
+                echo 'Establish virtual environment'
+                sh 'apt install -y python3-venv'
+                sh 'python3 -m venv env'
+                echo 'Activate virtual environment'
+                script {
+                    sh '. env/bin/activate'
+                }
+                sh 'pip install -r requirements.txt'
+                sh 'pytest --version'
+            }
         }
-      }
-      stage('List') {
-        steps {
-          echo "List contents of the GitHub repository root."
-          sh 'ls'
+        stage('Tests: Robot Framework') {
+            steps {
+                sh 'robot hometask_4_1.robot'
+            }
         }
-      }
-       stage('Test') {
-         steps {
-            echo 'Testing...'
-         }
-       }
-       stage('Deploy') {
-         steps {
-           echo 'Deploying...'
-         }
-       }
-   }
+        stage('Tests: Pytest') {
+            steps {
+                echo 'Some pytests...'
+            }
+        }
+    }
+    post {
+        always {
+            echo 'Deactivate virtual environment'
+            script {
+                sh 'deactivate'
+            }
+        }
+    }
 }
