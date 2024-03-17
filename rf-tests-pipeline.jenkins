@@ -21,12 +21,7 @@ pipeline {
         }
         stage('Tests: Robot Framework') {
             steps {
-                sh 'robot hometask_4_1.robot'
-            }
-        }
-        stage('Tests: Pytest') {
-            steps {
-                echo 'Some pytests...'
+                sh 'robot .'
             }
         }
     }
