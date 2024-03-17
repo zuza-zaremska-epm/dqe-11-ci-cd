@@ -3,9 +3,9 @@ pipeline {
     stages {
         stage('Setup') {
             steps {
-                sh 'pip install robot-framework'
-                sh 'pip install robotframework-databaselibrary'
-                sh 'pip install pymssql'
+                sh 'apt pip install robot-framework'
+                sh 'apt pip install robotframework-databaselibrary'
+                sh 'apt pip install pymssql'
             }
         }
         stage('Tests: Robot Framework') {
