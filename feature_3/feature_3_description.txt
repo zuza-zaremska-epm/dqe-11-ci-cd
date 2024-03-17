@@ -1,1 +1,1 @@
-This is the description of the third feature in this project.
+This is the description of the third feature within this project.
