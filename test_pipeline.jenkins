@@ -5,11 +5,12 @@ pipeline {
             steps {
                 sh 'python3 --version'
                 sh 'pip --version'
+                sh 'pip install -r requirements.txt'
             }
         }
         stage('Tests') {
             steps {
-                sh 'pytest test_homework.py'
+                sh 'pytest test_hometask_4_2.py'
             }
         }
     }

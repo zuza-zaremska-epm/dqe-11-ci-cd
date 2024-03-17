@@ -1,3 +1,4 @@
+pytest
 pymssql
 robotframework
 robotframework-databaselibrary
