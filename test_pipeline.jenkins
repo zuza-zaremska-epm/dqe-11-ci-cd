@@ -20,9 +20,14 @@ pipeline {
                 sh 'pytest --version'
             }
         }
-        stage('Tests') {
+        stage('Tests: Robot Framework') {
             steps {
-                sh 'pytest test_hometask_4_2.py'
+                sh 'robot hometask_4_1.robot'
+            }
+        }
+        stage('Tests: Pytest') {
+            steps {
+                echo 'Some pytests...'
             }
         }
     }
