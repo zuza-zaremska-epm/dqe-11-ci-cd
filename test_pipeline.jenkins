@@ -1,0 +1,15 @@
+pipeline {
+    agent any
+    stages {
+        stage('Version') {
+            steps {
+                sh 'python3 --version
+            }
+        }
+        stage('Tests') {
+            steps {
+                sh 'python3 pytest test_homework.py'
+            }
+        }
+    }
+}
