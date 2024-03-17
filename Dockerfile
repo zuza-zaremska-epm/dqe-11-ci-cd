@@ -5,4 +5,4 @@ WORKDIR /rf_tests
 RUN pwd
 RUN ls -la
 RUN apt-get update
-RUN apt-get install -y python3-pip
+RUN apt-get install python3-pip
