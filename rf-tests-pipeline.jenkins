@@ -17,7 +17,6 @@ pipeline {
                     sh '. env/bin/activate'
                 }
                 sh 'pip install -r requirements.txt'
-                sh 'pytest --version'
             }
         }
         stage('Tests: Robot Framework') {
@@ -35,7 +34,7 @@ pipeline {
         always {
             echo 'Deactivate virtual environment'
             script {
-                sh 'deactivate'
+                sh '. deactivate'
             }
         }
     }
