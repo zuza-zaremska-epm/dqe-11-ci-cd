@@ -1,7 +1,3 @@
 pymssql
-pytest
-pytest-depends
-pytest-html
-pyodbc
 robotframework
 robotframework-databaselibrary

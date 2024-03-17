@@ -4,6 +4,8 @@ pipeline {
    stages {
       stage('Install requirements') {
         steps {
+          sh 'python3 -m venv v_env'
+          sh 'source v_env/bin/activate'
           sh 'pip install -r requirements.txt'
           echo 'Requirements installed.'
         }
