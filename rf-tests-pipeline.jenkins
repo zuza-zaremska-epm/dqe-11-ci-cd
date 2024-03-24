@@ -27,8 +27,5 @@ pipeline {
                 sh 'robot testing.robot'
             }
         }
-        stage('Merge to main') {
-            echo 'Merging PR to main'
-        }
     }
 }
