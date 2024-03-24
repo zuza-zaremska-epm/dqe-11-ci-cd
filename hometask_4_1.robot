@@ -1,8 +1,8 @@
 *** Settings ***
 Library  DatabaseLibrary
 Library    OperatingSystem
-Suite Setup    Connect To Database    pymssql    ${dbName}    ${db_username}    ${db_password}    ${db_host}    ${db_port}
-Suite Teardown    Disconnect From Database
+#Suite Setup    Connect To Database    pymssql    ${dbName}    ${db_username}    ${db_password}    ${db_host}    ${db_port}
+#Suite Teardown    Disconnect From Database
 
 *** Variables ***
 ${dbName}    AdventureWorks2012
