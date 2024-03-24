@@ -20,9 +20,15 @@ pipeline {
             }
         }
         stage('Tests: Robot Framework') {
+            when {
+                expression { env.CHANGE_ID != null }
+            }
             steps {
                 sh 'robot testing.robot'
             }
+        }
+        stage('Merge to main') {
+            echo 'Merging PR to main'
         }
     }
 }
