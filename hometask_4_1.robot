@@ -12,6 +12,9 @@ ${db_host}    127.0.0.1
 ${db_port}    1433
 
 *** Test Cases ***
+Control passing test
+    Should Be Equal As Integers    1    1
+
 Check duplicates in Person.Address
     [Tags]    Person.Address
     [Documentation]
