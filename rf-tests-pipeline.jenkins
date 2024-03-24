@@ -19,6 +19,22 @@ pipeline {
                 sh 'pip install -r requirements.txt'
             }
         }
+        stage('Connect to SQL Server') {
+            steps {
+                script {
+                    try {
+                        def sql = library('pymssql')
+                        def conn = sql.connect(server='127.0.0.1', user='TestLogin', password='pass123', database='AdventureWorks2012', port=1433)
+                        println "Connected to SQL Server"
+                        // Perform SQL operations here
+                        conn.close()
+                    } catch (Exception e) {
+                        println "Failed to connect to SQL Server: ${e.message}"
+                        error("Failed to connect to SQL Server")
+                    }
+                }
+            }
+        }
         stage('Tests: Robot Framework') {
             steps {
                 sh 'robot .'
