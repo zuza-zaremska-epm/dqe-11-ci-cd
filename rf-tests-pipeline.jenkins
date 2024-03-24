@@ -21,7 +21,7 @@ pipeline {
         }
         stage('Check if Pull Request:') {
             steps {
-                echo 'Pull Request status: { env.CHANGE_ID != null }'
+                echo 'Pull Request status: ${env.CHANGE_ID != null}'
             }
         }
         stage('Tests: Robot Framework') {
