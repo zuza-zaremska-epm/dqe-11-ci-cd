@@ -13,4 +13,4 @@ ${db_port}    1433
 
 *** Test Cases ***
 Control passing test
-    Should Be Equal As Integers    1    1
+    Should Be Equal As Integers    1    2
