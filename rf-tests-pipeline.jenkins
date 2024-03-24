@@ -21,6 +21,7 @@ pipeline {
         }
         stage('Connect to SQL Server') {
             steps {
+                sh 'pymssql --version'
                 script {
                     try {
                         def sql = library('pymssql')
