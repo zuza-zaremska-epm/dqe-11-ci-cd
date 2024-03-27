@@ -1,3 +1,5 @@
 pymssql
 robotframework
 robotframework-databaselibrary
+xmlrunner
+unittest
