@@ -1,3 +1,4 @@
 pymssql
 robotframework
 robotframework-databaselibrary
+xmlrunner
