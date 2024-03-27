@@ -19,9 +19,9 @@ pipeline {
                 }
             }
         }
-        stage('Tests: Robot Framework') {
+        stage('Run unit tests') {
             steps {
-                sh 'robot testing.robot'
+                sh 'python -m unittest test_pipeline.py'
             }
         }
     }
