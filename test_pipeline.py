@@ -1,15 +1,5 @@
 import unittest
 import xmlrunner
-import io
-
-
-# out = io.BytesIO()
-# unittest.main(
-#     testRunner=xmlrunner.XMLTestRunner(output=out),
-#     failfast=False,
-#     buffer=False,
-#     catchbreak=False,
-#     exit=False)
 
 
 class TestStringMethods(unittest.TestCase):
