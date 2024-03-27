@@ -21,7 +21,7 @@ pipeline {
         }
         stage('Tests: Robot Framework') {
             steps {
-                sh 'robot testing.robot'
+                sh 'robot .'
             }
         }
     }
